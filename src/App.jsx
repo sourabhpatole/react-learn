@@ -4,8 +4,6 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import HookExample from "./components/HookExample";
 import ShoppingCart from "./components/ShoppingCart";
-import FancyInput from "./components/FancyInput";
-import Checkbox from "./components/Checkbox";
 
 function App() {
   const [count, setCount] = useState(0);
