@@ -20,6 +20,8 @@ function App() {
 
   return (
     <div>
+      <ThemeSwitcher />
+      <br />
       <h1>This is UseEffect Hook</h1>
       <Checkbox />
       <p>{count}</p>
