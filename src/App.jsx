@@ -3,6 +3,8 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import HookExample from "./components/HookExample";
+import PropDrill from "./components/PropDrill";
+import ThemeSwitcher from "./components/ThemeSwitcher";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -14,6 +16,8 @@ function App() {
 
   return (
     <div>
+      <ThemeSwitcher />
+      <br />
       <h1>This is UseEffect Hook</h1>
 
       <input
@@ -25,6 +29,7 @@ function App() {
       <button onClick={(e) => setCount(count + 1)}>Increment</button>
       {toggle && <HookExample />}
       <button onClick={() => setToggle(!toggle)}>ToggleBtn</button>
+      <PropDrill state={inputVal} />
     </div>
   );
 }
