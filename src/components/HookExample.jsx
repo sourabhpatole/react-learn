@@ -3,6 +3,7 @@ import DataFetcher from "./DataFetcher";
 
 const HookExample = () => {
   const [seconds, setSeconds] = useState(0);
+  const [toggle, setToggle] = useState(false);
   useEffect(() => {
     console.log("Component is mounted!!");
 
@@ -25,7 +26,8 @@ const HookExample = () => {
     <div>
       <h1>Hook example</h1>
       <p>Second elapsed : {seconds}</p>
-      <DataFetcher />
+      <button onClick={() => setToggle(!toggle)}>New Toggle</button>
+      {toggle ? <DataFetcher /> : <></>}
     </div>
   );
 };

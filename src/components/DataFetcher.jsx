@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 
 const DataFetcher = () => {
   const [data, setData] = useState([]);
+  const [layoutEffectValue, setLayoutEffectValue] = useState("initial");
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((res) => res.json())
@@ -12,7 +13,10 @@ const DataFetcher = () => {
     console.log("handle delete clicked!!" + id);
     setData(data.filter((item) => item.id !== id));
   };
-
+  useLayoutEffect(() => {
+    console.log("uselayouteffect");
+    setLayoutEffectValue("updated");
+  }, []);
   return (
     <div>
       {data.map((item) => (
