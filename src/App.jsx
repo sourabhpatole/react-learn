@@ -5,6 +5,7 @@ import "./App.css";
 import HookExample from "./components/HookExample";
 import ShoppingCart from "./components/ShoppingCart";
 import FancyInput from "./components/FancyInput";
+import Checkbox from "./components/Checkbox";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,7 +18,7 @@ function App() {
   return (
     <div>
       <h1>This is UseEffect Hook</h1>
-
+      <Checkbox />
       <p>{count}</p>
       <FancyInput ref={fancyInputRef} />
       <button onClick={() => fancyInputRef.current.focus()}>Focus</button>
