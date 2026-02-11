@@ -14,6 +14,9 @@ function App() {
   useEffect(() => {
     console.log("rerendered!!");
   }, [count]);
+  useEffect(() => {
+    inputRef.current && inputRef.current.focus();
+  }, []);
 
   return (
     <div>
