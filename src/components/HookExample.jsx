@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import DataFetcher from "./DataFetcher";
 
 const HookExample = () => {
   const [seconds, setSeconds] = useState(0);
@@ -24,6 +25,7 @@ const HookExample = () => {
     <div>
       <h1>Hook example</h1>
       <p>Second elapsed : {seconds}</p>
+      <DataFetcher />
     </div>
   );
 };
