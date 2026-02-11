@@ -3,6 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import HookExample from "./components/HookExample";
+import ShoppingCart from "./components/ShoppingCart";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -23,8 +24,9 @@ function App() {
       />
       <p>{count}</p>
       <button onClick={(e) => setCount(count + 1)}>Increment</button>
-      {toggle && <HookExample />}
+      {/* {toggle && <HookExample />} */}
       <button onClick={() => setToggle(!toggle)}>ToggleBtn</button>
+      <ShoppingCart />
     </div>
   );
 }
