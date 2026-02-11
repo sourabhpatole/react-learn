@@ -12,11 +12,14 @@ function App() {
   useEffect(() => {
     console.log("rerendered!!");
   }, [count]);
+  useEffect(() => {
+    inputRef.current && inputRef.current.focus();
+  }, []);
 
   return (
     <div>
       <h1>This is UseEffect Hook</h1>
-
+      <Checkbox />
       <p>{count}</p>
       <FancyInput ref={fancyInputRef} />
       <button onClick={() => fancyInputRef.current.focus()}>Focus</button>
