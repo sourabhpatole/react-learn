@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { useFetch } from "../hooks/useFetch";
 
 const DataFetcher = () => {
-  const [data, setData] = useState([]);
+  const fetchpost = () =>
+    fetch("https://jsonplaceholder.typicode.com/posts").then((res) =>
+      res.json(),
+    );
+
+  const { data, loading, error, fn } = useFetch(fetchpost);
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then((res) => res.json())
-      .then((sourabh) => setData(sourabh));
+    fn();
   }, []);
   console.log(data);
   const handleDelete = (id) => {
@@ -15,15 +19,22 @@ const DataFetcher = () => {
 
   return (
     <div>
-      {data.map((item) => (
-        <div key={item.id}>
-          <ul>
-            <li>{item.title}</li>
-          </ul>
-          <p>{item.body}</p>
-          <button onClick={() => handleDelete(item.id)}>delete</button>
-        </div>
-      ))}
+      <h1>This is Data Fetch</h1>
+      {loading ? (
+        "Loading..."
+      ) : (
+        <>
+          {data?.map((item) => (
+            <div key={item.id}>
+              <ul>
+                <li>{item.title}</li>
+              </ul>
+              <p>{item.body}</p>
+              <button onClick={() => handleDelete(item.id)}>delete</button>
+            </div>
+          ))}
+        </>
+      )}
     </div>
   );
 };

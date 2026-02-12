@@ -9,6 +9,7 @@ import Checkbox from "./components/Checkbox";
 import Expensive from "./components/Expensive";
 import ThemeSwitcher from "./components/ThemeSwitcher";
 import TodoList from "./components/TodoList";
+import DataFetcher from "./components/DataFetcher";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -27,8 +28,9 @@ function App() {
       <ThemeSwitcher />
       <br />
       <h1>This is UseEffect Hook</h1>
+      <DataFetcher />
       <Checkbox />
-      <Expensive />
+      {/* <Expensive /> */}
       <p>{count}</p>
       <FancyInput ref={fancyInputRef} />
       <button onClick={() => fancyInputRef.current.focus()}>Focus</button>
