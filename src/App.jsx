@@ -8,6 +8,7 @@ import FancyInput from "./components/FancyInput";
 import Checkbox from "./components/Checkbox";
 import Expensive from "./components/Expensive";
 import ThemeSwitcher from "./components/ThemeSwitcher";
+import TodoList from "./components/TodoList";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -22,6 +23,7 @@ function App() {
 
   return (
     <div>
+      <TodoList />
       <ThemeSwitcher />
       <br />
       <h1>This is UseEffect Hook</h1>
