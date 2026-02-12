@@ -7,6 +7,7 @@ import ShoppingCart from "./components/ShoppingCart";
 import FancyInput from "./components/FancyInput";
 import Checkbox from "./components/Checkbox";
 import Expensive from "./components/Expensive";
+import ThemeSwitcher from "./components/ThemeSwitcher";
 
 function App() {
   const [count, setCount] = useState(0);
